@@ -5,7 +5,7 @@ $("button").click( function(){
 		$.each((obj, function(key, value){
 			$("ul").append("<li>"+value.name+"</li>");
 			
-		})
+		});
 	});
 });
-console.log(uses.json);
+console.log('It worked');
