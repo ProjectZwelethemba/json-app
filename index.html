@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Json app</title>
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 <script src='js/jquery-1.8.1.min.js'></script>
 <script src='js/main.js'></script>
 </head>
@@ -43,24 +44,11 @@ background: #1b1b1b;
 <button class='btn'>Click here</button>
   
   <script>
-  
-  let response = await fetch('/article/fetch/logo-fetch.svg');
-
-let blob = await response.blob(); // download as Blob object
-
-// create <img> for it
-let img = document.createElement('img');
-img.style = 'position:fixed;top:10px;left:10px;width:100px';
-document.body.append(img);
-
-// show it
-img.src = URL.createObjectURL(blob);
-
-setTimeout(() => { // hide after three seconds
-  img.remove();
-  URL.revokeObjectURL(img.src);
-}, 3000);
-    
+$('document').ready(functon(){
+    $(.btn).click(function(){
+    $(.btn).hide();
+});              
+   });
   </script>  
 </body>
 </html>
