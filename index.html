@@ -9,7 +9,7 @@
 header{
 background: black;
 width: 100%;
-height: 128px;
+height: 80px;
 text-align: center;
 color: white;
 }
@@ -41,5 +41,26 @@ background: #1b1b1b;
 <ul></ul>
 <br>
 <button class='btn'>Click here</button>
+  
+  <script>
+  
+  let response = await fetch('/article/fetch/logo-fetch.svg');
+
+let blob = await response.blob(); // download as Blob object
+
+// create <img> for it
+let img = document.createElement('img');
+img.style = 'position:fixed;top:10px;left:10px;width:100px';
+document.body.append(img);
+
+// show it
+img.src = URL.createObjectURL(blob);
+
+setTimeout(() => { // hide after three seconds
+  img.remove();
+  URL.revokeObjectURL(img.src);
+}, 3000);
+    
+  </script>  
 </body>
 </html>
